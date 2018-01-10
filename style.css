@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower');
+@import url('https://fonts.googleapis.com/css?family=Coming+Soon');
+.reveal h1 {
+  font-size: 3em;
+}
+
+.nav {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(134, 179, 201, 0.51);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.nav--hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+.status {
+  position: relative;
+  margin: 2rem;
+}
+.status h1 {
+  background: #fff;
+  padding: 1rem 3rem;
+  font-size: 3rem;
+  border: 4px solid black;
+  border-radius: 100px;
+  font-weight: 900;
+  margin-left: auto;
+  margin-right: auto;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.game {
+  background-color: #eee;
+  padding: 5% 10%;
+  font-family: 'Coming Soon', cursive;
+  font-weight: 900;
+  width: 80%;
+  position: relative;
+}
+
+.ui, .players, .payoffs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.game__payoffs {
+  width: 300px;
+  height: 300px;
+  background-position: center;
+  background-size: cover;
+  background-image: url("assets/0.png");
+}
+.payoffs--punishment {  background-image: url("assets/1.png"); }
+.payoffs--sucker {  background-image: url("assets/2.png"); }
+.payoffs--temptation {  background-image: url("assets/3.png"); }
+.payoffs--reward {  background-image: url("assets/4.png"); }
+
+.game__player, .icon {
+  width: 200px;
+  height: 200px;
+  background-position: center;
+  background-size: cover;
+  margin: 0 2rem;
+}
+.player--mini {
+  width: 50px;
+  height: 50px;
+}
+
+.you {
+  background-image: url("assets/left-blue.png");
+}
+.you--loose {
+  background-image: url("assets/left-red.png");
+}
+.you--win {
+  background-image: url("assets/left-green.png");
+}
+.you--dead {
+  background-image: url("assets/left-gray.png");
+}
+
+.oponent {
+  background-image: url("assets/right-blue.png");
+}
+.oponent--loose {
+  background-image: url("assets/right-red.png");
+}
+.oponent--win {
+  background-image: url("assets/right-green.png");
+}
+.oponent--dead {
+  background-image: url("assets/right-gray.png");
+}
+
+.ui {
+  margin-top: 4rem;
+}
+
+.ui__button {
+  margin: 0 2rem;
+  background: #fff;
+  padding: 1rem 3rem;
+  font-size: 2rem;
+  border: 4px solid black;
+  border-radius: 100px;
+  font-family: 'Coming Soon', cursive;
+  font-weight: 900;
+  cursor: pointer;
+}
+.ui__button:hover {
+  background-color: #FFEF5C;
+}
+.payoffs {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+.payoffs span {
+  margin: 0 1rem;
+}
+
+.icon {
+  margin: 0;
+  width: 40px;
+  height: 40px;
+}
+
+.icon--love {
+  background-image: url("assets/heart.png");
+}
+.icon--hate {
+  background-image: url("assets/skull.png");
+}
+.moves__board--you, .moves__board--oponent {
+  display: inline;
+}

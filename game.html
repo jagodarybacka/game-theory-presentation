@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>game</title>
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="game">
+    <nav class="nav ">
+      <div class="status">
+        <h1>Wygrana</h1>
+      </div>
+      <button id="btn-start"class="ui__button" type="button">Zagraj ponownie</button>
+    </nav>
+    <div class="payoffs">
+      <span class="payoffs__you">0</span>:<span class="payoffs__oponent">0</span>
+    </div>
+    <div class="players">
+
+      <canvas class="game__player you"></canvas>
+      <canvas class="game__payoffs"></canvas>
+      <canvas class="game__player oponent"></canvas>
+    </div>
+    <div class="ui">
+      <button class="ui__button" type="button" name="cheat">Oszukaj</button>
+      <button class="ui__button" type="button" name="trust">Zaufaj</button>
+    </div>
+    <div class="moves">
+      <h2>Ostatnie ruchy</h2>
+      <div class="moves__you">
+        <canvas class="game__player player--mini you"></canvas>
+        <div class="moves__board--you"></div>
+      </div>
+      <div class="moves__oponent">
+        <canvas class="game__player player--mini oponent"></canvas>
+        <div class="moves__board--oponent"></div>
+      </div>
+    </div>
+  </div>
+  <script src="game.js" charset="utf-8"></script>
+</body>
+
+</html>
