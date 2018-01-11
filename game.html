@@ -14,20 +14,21 @@
       <div class="status">
         <h1>Wygrana</h1>
       </div>
-      <button id="btn-start"class="ui__button" type="button">Zagraj ponownie</button>
+      <button id="btn-start"class="ui__button" type="button">Zagraj</button>
     </nav>
     <div class="payoffs">
       <span class="payoffs__you">0</span>:<span class="payoffs__oponent">0</span>
     </div>
     <div class="players">
-
+      <span class="player__name">Ty</span>
       <canvas class="game__player you"></canvas>
       <canvas class="game__payoffs"></canvas>
       <canvas class="game__player oponent"></canvas>
+      <span class="player__name">Przeciwnik</span>
     </div>
     <div class="ui">
-      <button class="ui__button" type="button" name="cheat">Oszukaj</button>
-      <button class="ui__button" type="button" name="trust">Zaufaj</button>
+      <button class="ui__button" type="button" id="btn-cheat" name="cheat">Oszukaj</button>
+      <button class="ui__button" type="button" id="btn-trust" name="trust">Zaufaj</button>
     </div>
     <div class="moves">
       <h2>Ostatnie ruchy</h2>

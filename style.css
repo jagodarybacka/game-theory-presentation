@@ -46,6 +46,10 @@
   position: relative;
 }
 
+.player__name {
+  align-self: flex-start;
+}
+
 .ui, .players, .payoffs {
   display: flex;
   align-items: center;
@@ -59,10 +63,10 @@
   background-size: cover;
   background-image: url("assets/0.png");
 }
-.payoffs--punishment {  background-image: url("assets/1.png"); }
-.payoffs--sucker {  background-image: url("assets/2.png"); }
-.payoffs--temptation {  background-image: url("assets/3.png"); }
-.payoffs--reward {  background-image: url("assets/4.png"); }
+.payoffs--p {  background-image: url("assets/1.png"); }
+.payoffs--s {  background-image: url("assets/2.png"); }
+.payoffs--t {  background-image: url("assets/3.png"); }
+.payoffs--r {  background-image: url("assets/4.png"); }
 
 .game__player, .icon {
   width: 200px;
@@ -79,10 +83,10 @@
 .you {
   background-image: url("assets/left-blue.png");
 }
-.you--loose {
+.you--s {
   background-image: url("assets/left-red.png");
 }
-.you--win {
+.you--t {
   background-image: url("assets/left-green.png");
 }
 .you--dead {
@@ -92,10 +96,10 @@
 .oponent {
   background-image: url("assets/right-blue.png");
 }
-.oponent--loose {
+.oponent--t {
   background-image: url("assets/right-red.png");
 }
-.oponent--win {
+.oponent--s {
   background-image: url("assets/right-green.png");
 }
 .oponent--dead {
