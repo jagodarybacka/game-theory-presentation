@@ -1,9 +1,9 @@
 class Game {
-  constructor(ui, player1 = new Person(), player2 = new Person()) {
+  constructor(ui, oponent = new Person(), you = new Person()) {
     this.rounds = 5;
     this.ui = ui;
-    this.you = player1;
-    this.oponent = player2;
+    this.you = you;
+    this.oponent = oponent;
     this.payoffs = {
       r: [2, 2, "r"],
       s: [-1, 3, "s"],
@@ -77,16 +77,39 @@ class Game {
     this.ui.oponent.payoff.innerHTML = this.oponent.payoff;
     this.removeAllMoves()
   }
-
-
 }
+
 class Strategy {
   constructor(strategy = 'random') {
-    this.strategy = this.random;
+    console.log(strategy);
+    switch (strategy) {
+      case 'tit-for-tat': {
+        this.strategy = this.titForTat;
+        break;
+      }
+      case 'tit-for-two-tats': {
+        this.strategy = this.titForTwoTats;
+        break;
+      }
+      default: {
+        this.strategy = this.random;
+      }
+    }
   }
 
   random() {
     return Math.random() > 0.5 ? 'cheat' : 'trust';
+  }
+
+  titForTat(oponentMoves) {
+    return oponentMoves.slice(-2)[0] === 'cheat' ? 'cheat' : 'trust'
+  }
+
+  titForTwoTats(oponentMoves) {
+    let [prev, last] = oponentMoves.slice(-3, -1);
+    console.log(prev, last);
+    return prev === 'cheat' && last === 'cheat' ?
+      'cheat' : 'trust';
   }
 
   apply(oponentMoves) {
@@ -96,10 +119,10 @@ class Strategy {
 
 
 class Person {
-  constructor(options = {}) {
-    this.payoff = options.payoff || 0;
-    this.moves = options.moves || [];
-    this.strategy = options.strategy || new Strategy();
+  constructor(strategy = new Strategy(), payoff = 0, moves = []) {
+    this.payoff = payoff;
+    this.moves = moves;
+    this.strategy = new Strategy(strategy);
   }
 
   addMove(move) {
@@ -107,6 +130,7 @@ class Person {
   }
 
   makeMove(oponentMoves) {
+    console.log(oponentMoves);
     return this.strategy.apply(oponentMoves);
   }
 
@@ -117,14 +141,19 @@ class Person {
 }
 
 
-let you = new Person();
-let oponent = new Person();
+const you = new Person();
+// const oponent = new Person();
+// const TitForTat = new Person('tit-for-tat');
+const TitForTwoTats = new Person('tit-for-two-tats');
 let game;
 const UI =  {
   nav:  document.querySelector('.nav'),
+  navStart: document.querySelector('#nav-start'),
+  navAgain: document.querySelector('#nav-again'),
   btnStart:  document.querySelector('#btn-start'),
   btnCheat:  document.querySelector('#btn-cheat'),
   btnTrust:  document.querySelector('#btn-trust'),
+  btnReset:  document.querySelector('#btn-reset'),
   payoffsBoard:  document.querySelector('.game__payoffs'),
   you: {
     payoff:  document.querySelector('.payoffs__you'),
@@ -138,9 +167,10 @@ const UI =  {
   }
 }
 
+UI.navAgain.style.display = "none";
+UI.btnReset.onclick = () => location.reload();
 UI.btnStart.onclick = () => {
-  game = new Game(UI);
-  // nav.className = 'nav nav--hidden'
+  game = new Game(UI, TitForTwoTats);
   game.init()
 }
 UI.btnCheat.onclick = () => {
@@ -151,4 +181,14 @@ UI.btnTrust.onclick = () => {
 }
 
 
-// najpierw robimy podstawowa gre człowiek-człowiek
+/* nav
+1. wybieranie strategii przeciwnika (UI ok)
+
+rozgrywka:
+1. wypisanie strategii jaka gra przeciwnik nad nim
+OK. opcja resetu gry w trakcie
+
+konczenie gry:
+1. wypisanie wyniku gry (UI ok)
+2. przycisk zagraj ponownie (UI ok)
+*/

@@ -11,10 +11,26 @@
 <body>
   <div class="game">
     <nav class="nav ">
-      <div class="status">
-        <h1>Wygrana</h1>
+      <div id="nav-start" class="status">
+        <h1>Strategia przeciwnika:</h1>
+        <select>
+          <option value="default" selected>Nieznana</option>
+          <option value="tit-for-tat">
+            Wet za wet
+          </option>
+          <option value="tit-for-two-tats">
+            Wet za dwa wety
+          </option>
+          <option value="random">
+            Losowa 50:50
+          </option>
+        </select>
+        <button id="btn-start" class="ui__button" type="button">Zagraj</button>
       </div>
-      <button id="btn-start"class="ui__button" type="button">Zagraj</button>
+      <div id="nav-again" class="status summary">
+        <h1>Wygrana</h1>
+        <button id="btn-again" class="ui__button" type="button">Zagraj ponownie</button>
+      </div>
     </nav>
     <div class="payoffs">
       <span class="payoffs__you">0</span>:<span class="payoffs__oponent">0</span>
@@ -40,6 +56,7 @@
         <canvas class="game__player player--mini oponent"></canvas>
         <div class="moves__board--oponent"></div>
       </div>
+      <button id="btn-reset" class="ui__button" type="button">Reset</button>
     </div>
   </div>
   <script src="game.js" charset="utf-8"></script>

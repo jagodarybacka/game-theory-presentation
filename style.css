@@ -15,6 +15,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  z-index: 10;
 }
 .nav--hidden {
   opacity: 0;
@@ -23,8 +24,12 @@
 .status {
   position: relative;
   margin: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-.status h1 {
+.status h1, .status select {
   background: #fff;
   padding: 1rem 3rem;
   font-size: 3rem;
@@ -35,6 +40,13 @@
   margin-right: auto;
   vertical-align: middle;
   text-align: center;
+}
+.status select {
+  margin-top: 1rem;
+  cursor: pointer;
+  font-size: 2rem;
+  font-family: 'Coming Soon', cursive;
+
 }
 
 .game {
@@ -112,6 +124,7 @@
 
 .ui__button {
   margin: 0 2rem;
+  margin-top: 1rem;
   background: #fff;
   padding: 1rem 3rem;
   font-size: 2rem;
@@ -120,6 +133,7 @@
   font-family: 'Coming Soon', cursive;
   font-weight: 900;
   cursor: pointer;
+  /*width: fit-content;*/
 }
 .ui__button:hover {
   background-color: #FFEF5C;
@@ -138,6 +152,9 @@
   height: 40px;
 }
 
+.moves {
+  margin-top: 1rem;
+}
 .icon--love {
   background-image: url("assets/heart.png");
 }
@@ -146,4 +163,11 @@
 }
 .moves__board--you, .moves__board--oponent {
   display: inline;
+}
+
+
+#btn-reset {
+  position: absolute;
+  right: 0;
+  bottom: 4rem;
 }
