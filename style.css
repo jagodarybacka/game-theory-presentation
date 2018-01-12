@@ -29,7 +29,7 @@
   justify-content: center;
   align-items: center;
 }
-.status h1, .status select {
+.status h1, .status h2, .status select {
   background: #fff;
   padding: 1rem 3rem;
   font-size: 3rem;
@@ -40,6 +40,7 @@
   margin-right: auto;
   vertical-align: middle;
   text-align: center;
+  margin-bottom: 1rem;
 }
 .status select {
   margin-top: 1rem;
@@ -170,4 +171,11 @@
   position: absolute;
   right: 0;
   bottom: 4rem;
+}
+
+.show {
+  display: unset;
+}
+.hide {
+  display: none;
 }

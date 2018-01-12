@@ -10,10 +10,10 @@
 
 <body>
   <div class="game">
-    <nav class="nav ">
+    <nav class="nav">
       <div id="nav-start" class="status">
         <h1>Strategia przeciwnika:</h1>
-        <select>
+        <select id="select-strategy">
           <option value="default" selected>Nieznana</option>
           <option value="tit-for-tat">
             Wet za wet
@@ -27,8 +27,9 @@
         </select>
         <button id="btn-start" class="ui__button" type="button">Zagraj</button>
       </div>
-      <div id="nav-again" class="status summary">
-        <h1>Wygrana</h1>
+      <div id="nav-again" class="status summary hide">
+        <h2 id="again-payoff"></h2>
+        <h1 id="again-result"></h1>
         <button id="btn-again" class="ui__button" type="button">Zagraj ponownie</button>
       </div>
     </nav>
@@ -40,7 +41,7 @@
       <canvas class="game__player you"></canvas>
       <canvas class="game__payoffs"></canvas>
       <canvas class="game__player oponent"></canvas>
-      <span class="player__name">Przeciwnik</span>
+      <span class="player__name" id="oponent-strategy">Przeciwnik</span>
     </div>
     <div class="ui">
       <button class="ui__button" type="button" id="btn-cheat" name="cheat">Oszukaj</button>
