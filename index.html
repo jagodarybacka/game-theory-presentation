@@ -1,60 +1,201 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Ewolucja kooperacji i dylemat więźnia</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/reveal.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/theme/blood.min.css">
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <div class="reveal">
-      <div class="slides">
-        <section>
-          <section>
-            <iframe src="game.html" width="1000" height="1000"></iframe>
-          </section>
-          <section>
-            <h1>Iterowany dylemat więźnia</h1>
-            <h2>Ewolucja współpracy</h2>
-          </section>
-        </section>
-        <section>
-          <section>
-            pojedyncza gra
-          </section>
-          <section>
-            <canvas class="game" width="300" height="300"></canvas>
-          </section>
-        </section>
-        <section>
-          jak grać gdy gramy wiele razy
-        </section>
-        <section>
-          turniej w dylemat wieznia
-        </section>
-        <section>
-          jak grac zasady ogolne
-        </section>
-        <section>
-          <section>
-            kto gra w dylemat wieznia
-          </section>
-          <section>
-            przykłady wsród ludzi
-          </section>
-          <section>
-            przykłady ewolucji
-          </section>
-        </section>
-        <section>
-          wnioski
-        </section>
-      </div>
-    </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/js/reveal.min.js" charset="utf-8"></script>
-    <script src="index.js" charset="utf-8"></script>
-    <!-- <script src="game.js" charset="utf-8"></script> -->
-  </body>
+<head>
+  <meta charset="utf-8">
+  <title>Ewolucja kooperacji i dylemat więźnia</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/reveal.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/theme/blood.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        <!-- <section>
+            <iframe src="game.html" width="1000" height="1000"></iframe>
+          </section> -->
+        <section>
+          <h1>Czy bakterie grają w gry?</h1>
+          <h2>Iterowany dylemat więźnia</h2>
+        </section>
+      </section>
+
+      <section>
+        <section>
+          <h3>Na czym polega dylemat więźnia?</h3>
+        </section>
+
+        <section>
+          <h3>Macierz wypłat</h3>
+          <table>
+            <tr>
+              <th></th>
+              <th>Współpraca</th>
+              <th>Zdrada</th>
+            </tr>
+            <tr>
+              <th>Współpraca</th>
+              <td>2, 2</td>
+              <td>-1, 3</td>
+            </tr>
+            <tr>
+              <th>Zdrada</th>
+              <td>3, -1</td>
+              <td>0, 0</td>
+            </tr>
+          </table>
+        </section>
+
+        <section>
+          <h3>Macierz wypłat - ogólnie</h3>
+          <table>
+            <tr>
+              <th></th>
+              <th>Współpraca</th>
+              <th>Zdrada</th>
+            </tr>
+            <tr>
+              <th>Współpraca</th>
+              <td>R, R</td>
+              <td>S, T</td>
+            </tr>
+            <tr>
+              <th>Zdrada</th>
+              <td>T, S</td>
+              <td>P, P</td>
+            </tr>
+          </table>
+          <ul>
+            <li>R - nagroda za obopólną współpracę (reward)</li>
+            <li>P - kara za obopólną zdradę (punishment)</li>
+            <li>T - pokusa (temptation)</li>
+            <li>S - wypłata zdradzonego (sucker's payoff)</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Uogólnienie dylematu więźania</h3>
+          <p>
+            T > R > P > S
+          </p>
+          <ul>
+            <li>R - nagroda za obopólną współpracę (reward)</li>
+            <li>P - kara za obopólną zdradę (punishment)</li>
+            <li>T - pokusa (temptation)</li>
+            <li>S - wypłata zdradzonego (sucker's payoff)</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Macierz wypłat</h3>
+          <table>
+            <tr>
+              <th></th>
+              <th>Współpraca</th>
+              <th>Zdrada</th>
+            </tr>
+            <tr>
+              <th>Współpraca</th>
+              <td>2, 2</td>
+              <td>-1, 3</td>
+            </tr>
+            <tr>
+              <th>Zdrada</th>
+              <td>3, -1</td>
+              <td>0, 0</td>
+            </tr>
+          </table>
+          <p>(0, 0) - dominacja, punkt równowagi Nasha</p>
+          <p>(2, 2) - optimum Pareto</p>
+          <!--  racjonalnym wyborem kiedy możemy zagrać z kimś tylko raz jest Zdrada, jako jedyna strategia nie jest zdominowana
+                Jednak racjonalność prowadzi do gorszego wyniku niż jest możliwy, niż moglibyśmy otrzymac gdybysmy oboje zaufali przeciwnikowi. Dylemat skonstruowany ejst w taki sposób że nie możemy rowniez wykorzystywać ufności przeciwnika (chyba że jest to przeciwnik naiwny, ufający mimo zdrady).-->
+        </section>
+
+        <section>
+          <h3>Wnioski</h3>
+          <p>
+            Gdy gramy raz nie opłaca się współpracować
+          </p>
+          <p>Gdy wiemy ile razy będziemy grać również nie opłaca się współpracować</p>
+          <!-- Przeciwnik może zdradzic w ostatnim ruchu, więc my zdradźmy w przedostatnim itd -->
+        </section>
+
+        <section>
+          <h3>Kiedy współpraca się opłaca?</h3>
+        </section>
+
+        <section>
+          <h3>Wtedy, gdy istnieje prawdopodobienstwo, że gracze będą grać ze sobą w przyszłości</h3>
+          <ul>
+            <li>Strategia przyjęta podczas gry będzie miała wpływ na wybory graczy podczas kolejnej gry.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Jaką strategię przyjąć?</h3>
+        </section>
+
+        <section>
+          <iframe src="game.html" width="1000" height="1000"></iframe>
+        </section>
+
+        <section>
+          <h3>Jaką strategię przyjąć?</h3>
+          <p>Nie istnieje najlepsza strategia, niezależna od środowiska</p>
+        </section>
+        <!-- <section>
+          1. The beginning of the story is that cooperation can get started even in a world of unconditional defection. The development cannot take place if it is tried only by scattered individuals who have virtually no chance to interact with each other. However,
+          cooperation can evolve from small clusters of individuals who base their cooperation on reci- procity and have even a small proportion of their interac- tions with each other. 2. The middle of the story is that a strategy based on reciprocity
+          can thrive in a world where many different kinds of strategies are being tried. 3. The end of the story is that cooperation, once estab- lished on the basis of reciprocity, can protect itself from invasion by less cooperative strategies. Thus,
+          the gear wheels of social evolution have a ratchet.
+        </section> -->
+      </section>
+
+
+      <section>
+        <section>
+          <h3>Turniej programów komputerowych</h3>
+          <p>1984</p>
+          <p>Robert Axelrod</p>
+        </section>
+
+        <section>
+        </section>
+      </section>
+
+
+      <section>
+        jak grac zasady ogolne
+      </section>
+
+
+
+
+      <section>
+        kto gra w dylemat wieznia
+      </section>
+
+
+      <section>
+        przykłady wsród ludzi
+      </section>
+
+
+      <section>
+        przykłady ewolucji
+      </section>
+      </section>
+      <section>
+        wnioski
+      </section>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/js/reveal.min.js" charset="utf-8"></script>
+  <script src="index.js" charset="utf-8"></script>
+  <!-- <script src="game.js" charset="utf-8"></script> -->
+</body>
+
 </html>
