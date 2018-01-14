@@ -130,6 +130,8 @@ class Strategy {
   }
 
   titForTat(oponentMoves) {
+    if (oponentMoves.length === 1) return 'trust';
+    console.log(oponentMoves);
     return oponentMoves.slice(-2)[0] === 'cheat' ? 'cheat' : 'trust'
   }
 

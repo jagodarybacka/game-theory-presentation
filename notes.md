@@ -22,7 +22,7 @@
 2. turniej w dylemat wieznia
 
 -OK za wikipedia - kto go zorganizował, kiedy
-- zasady: Wanting to find out what would happen, I invited pro-
+-OK zasady: Wanting to find out what would happen, I invited pro-
 fessional game theorists to send in entries to just such a
 computer tournament. It was structured as a round robin,
 meaning that each entry was paired with each other entry.
@@ -34,9 +34,9 @@ Most of the
 entrants were recruited from those who had published arti-
 cles on game theory in general or the Prisoner's Dilemma
 in particular.
-- zaproponuj aby widownia sama odbyła taki turniej, na twojej grze, przeciwko losowemu przeciwnikowi (wybór powinien być pomiedzy tit-for-tat tit for two tats, random, detektywem...)
-- poznajmy wszystkie strategie (screeny i gify z game of trust)
-- wrcajac do turnieju: TIT FOR TAT, submitted by Professor Anatol Rapoport
+-OK zaproponuj aby widownia sama odbyła taki turniej, na twojej grze, przeciwko losowemu przeciwnikowi (wybór powinien być pomiedzy tit-for-tat tit for two tats, random, detektywem...)
+-OK poznajmy wszystkie strategie (screeny i gify z game of trust)
+-OK wrcajac do turnieju: TIT FOR TAT, submitted by Professor Anatol Rapoport
 of the University of Toronto, won the tournament. This
 was the simplest of all submitted programs and it turned
 out to be the best!
@@ -47,10 +47,10 @@ widely known and most discussed rule for playing the Pris-
 oner's Dilemma. It is easily understood and easily pro-
 grammed. It is known to elicit a good degree of coopera-
 tion when played with humans
--It has the disadvantage that it
+-OK It has the disadvantage that it
 is too generous with the RANDOM rule, which was
 known by the participants to be entered in the tournament.
-- ciekawostka The striking fact is that none of the more complex pro-
+-OK ciekawostka The striking fact is that none of the more complex pro-
 grams submitted was able to perform as well as the origi-
 nal, simple TIT FOR TAT. This result contrasts with computer chess tournaments,
 where complexity is obviously needed. For example, in the
@@ -86,7 +86,8 @@ a native strategy if the newcomer gets a higher score with a
 native than a native gets with another native. Since the
 natives are virtually the entire population, the concept of
 invasion is equivalent to the single mutant individual being
-able to do better than the population average. This leads
+able to do
+ better than the population average. This leads
 directly to the key concept of the evolutionary approach. A
 strategy is collectively stable if no strategy can invade it. 1
 The biological motivation for this approach is based on
@@ -144,9 +145,6 @@ will reciprocate any cooperation. If the newcomers arrive
 in small clusters, however, they will have a chance to get
 cooperation started.
 
-4. Kooperacja bez przyjaźni
-
-- live and let live podczas drugiej wojny
 
 5. Kooperacja bez przewidywania
 veral concepts from evolu-
@@ -379,6 +377,9 @@ it can't.
 Both the tournament and the theoretical results show that
 it pays to cooperate as long as the other player is
 cooperating.
+
+
+
 The single best predictor of how well a rule performed was
 whether or not it was nice, which is to say, whether or not
 it would ever be the first to defect. In the first round, each
@@ -403,6 +404,8 @@ ongoing relationship with the garbage collection service of
 that town, and could not shop around for another service.
 Conversely, there were always enough doctors in the area
 for them to break
+
+
 Short interactions are not the only condition which
 would make it pay to be the first to defect. The other
 possibility is that cooperation will simply not be reciprocat-
