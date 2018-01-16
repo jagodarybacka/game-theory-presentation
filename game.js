@@ -118,6 +118,31 @@ class Strategy {
         this.name = "Wet za dwa wety";
         break;
       }
+      case 'all-d': {
+        this.strategy = this.allD;
+        this.name = "Oszust";
+        break;
+      }
+      case 'friendly': {
+        this.strategy = this.friendly;
+        this.name = "Przyjazna";
+        break;
+      }
+      case 'grunger': {
+        this.strategy = this.grunger;
+        this.name = "Pamietliwa";
+        break;
+      }
+      case 'detective': {
+        this.strategy = this.detective;
+        this.name = "Detektyw";
+        break;
+      }
+      case 'random': {
+        this.strategy = this.random;
+        this.name = "Strategia losowa"
+        break;
+      }
       default: {
         this.strategy = this.random;
         this.name = "Strategia losowa"
@@ -139,6 +164,31 @@ class Strategy {
     let [prev, last] = oponentMoves.slice(-3, -1);
     return prev === 'cheat' && last === 'cheat' ?
       'cheat' : 'trust';
+  }
+
+  allD() {
+    return 'cheat';
+  }
+
+  friendly() {
+    return 'trust';
+  };
+
+  detective(oponentMoves) {
+    console.log(oponentMoves);
+    if (oponentMoves.length === 1) return 'trust';
+    if (oponentMoves.length === 2) return 'cheat';
+    if (oponentMoves.length === 3) return 'trust';
+    if (oponentMoves.length === 4) return 'trust';
+
+    if(oponentMoves[2] === 'cheat') return this.titForTat(oponentMoves);
+    else return 'cheat';
+  }
+
+  grunger(oponentMoves) {
+
+    if (oponentMoves.slice(0, -1).indexOf('cheat') >= 0) return 'cheat';
+    else return 'trust'
   }
 
   apply(oponentMoves) {
