@@ -143,9 +143,18 @@ class Strategy {
         this.name = "Strategia losowa"
         break;
       }
+      case 'default': {
+        let s = [this.titForTat, this.titForTwoTats, this.detective, this.grunger, this.allD, this.friendly, this.random]
+        let strategy = s[Math.floor(Math.random() * s.length)];
+        console.log(strategy.name);
+        this.strategy = strategy;
+        this.name = "Przeciwnik"
+        break;
+      }
       default: {
         this.strategy = this.random;
         this.name = "Strategia losowa"
+        break;
       }
     }
   }
@@ -156,7 +165,6 @@ class Strategy {
 
   titForTat(oponentMoves) {
     if (oponentMoves.length === 1) return 'trust';
-    console.log(oponentMoves);
     return oponentMoves.slice(-2)[0] === 'cheat' ? 'cheat' : 'trust'
   }
 
@@ -175,7 +183,6 @@ class Strategy {
   };
 
   detective(oponentMoves) {
-    console.log(oponentMoves);
     if (oponentMoves.length === 1) return 'trust';
     if (oponentMoves.length === 2) return 'cheat';
     if (oponentMoves.length === 3) return 'trust';
@@ -186,7 +193,6 @@ class Strategy {
   }
 
   grunger(oponentMoves) {
-
     if (oponentMoves.slice(0, -1).indexOf('cheat') >= 0) return 'cheat';
     else return 'trust'
   }
