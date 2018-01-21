@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Indie+Flower');
 @import url('https://fonts.googleapis.com/css?family=Coming+Soon');
+
+@media screen and (max-width: 1000px;) {
+  .game {
+    transform: scale(0.9);
+  }
+}
+html {
+  background: #eee;
+}
 .reveal h1 {
   font-size: 3em;
 }
@@ -10,7 +19,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: rgba(134, 179, 201, 0.51);
+  background-color: #eeec;
   display: flex;
   align-items: center;
   justify-content: center;
