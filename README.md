@@ -3,7 +3,7 @@ Presentation I've made for Game Theory class about Iterated Prisoner's Dilemma
 
 ## Presentation
 
-Description of Prisoner's Dilemma theory
+Description of Prisoner's Dilemma theory. Presentation language - Polish only 🇵🇱
 
 [Presentation](https://jagodarybacka.github.io/game-theory-presentation)
 
